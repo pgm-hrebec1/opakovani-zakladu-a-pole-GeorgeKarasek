@@ -7,11 +7,67 @@ const prompt = promptSync();
 // Napiste program, ktery
 // - se zepta uzivatele postupne na 3 cisla; kazde cislo uzivatel potvrdi odeslanim ENTER
 // - program vypise:
+
+
+let cislaUzivatele1 : string = prompt("Zadejte cislo:");
+let cislo1 : number = Number(cislaUzivatele1);
+let cislaUzivatele2 : string = prompt("Zadejte cislo:");
+let cislo2 : number = Number(cislaUzivatele2);
+let cislaUzivatele3 : string = prompt("Zadejte cislo:");
+let cislo3 : number = Number(cislaUzivatele3);
+
+
+
+
+
+function cislaO1(){
 // 1. Soucet vsech zadanych cisel
+let odpoved1 : number = cislo1 + cislo2 + cislo3;
+console.log("Soucet techto cisel je: "+odpoved1);
 // 2. Soucin vsech zadanych cisel
+let odpoved2 : number = cislo1 * cislo2 * cislo3;
+console.log("Soucin techto cisel je: "+odpoved2);
 // 3. Aritmeticky prumer vsech zadanych cisel
+let odpoved3 : number = (cislo1 + cislo2 + cislo3)/3;
+console.log("Aritmeticky prumer techto cisel je: "+odpoved3);
 // 4. Rozdil mezi nejvetsim a nejmensim zadanym cislem
-// 5. Pro kazde zadane cislo vetsi nez 100 vypise program hvezdicku. 
+    let nejvetsiCislo : number = cislo1;                                  
+    let nejmensiCislo : number = cislo2;
+if (cislo1 < cislo2||cislo1 < cislo3){
+    nejmensiCislo = cislo1
+}
+if (cislo2 < cislo1|| cislo2 < cislo3){
+    nejmensiCislo = cislo2
+}
+if (cislo3 < cislo1||cislo3<cislo2){
+    nejmensiCislo = cislo3
+}
+if (cislo1 > cislo2||cislo1 > cislo3){
+    nejmensiCislo = cislo1
+}
+if (cislo2 > cislo1|| cislo2 > cislo3){
+    nejmensiCislo = cislo2
+}
+if (cislo3 > cislo1||cislo3>cislo2){
+    nejmensiCislo = cislo3
+}
+
+let rozdil : number = nejvetsiCislo - nejmensiCislo;
+console.log("Rozdil mezi nejvetsim a nejmensim cisel je: "+rozdil);
+// 5. Pro kazde zadane cislo vetsi nez 100 vypise program hvezdicku.
+let pocitani : string = "";
+if (cislo1 >= 100){
+    pocitani = pocitani + "*";
+}
+if (cislo2 >= 100){
+    pocitani = pocitani + "*";
+}
+if (cislo3 >= 100){
+    pocitani = pocitani + "*";
+}
+console.log("Kazda hvezdicka znamena ze je tam cislo vetsi nez 100: "+pocitani);
+}
+cislaO1();
 // -  BONUS: hvezdicky vypise nakonec a na jeden radek, ne po kazdem cisle zvlast.
 // Program potom uzavrete do funkce "cislaO1"
 
