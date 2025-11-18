@@ -33,36 +33,36 @@ console.log("Aritmeticky prumer techto cisel je: "+odpoved3);
 // 4. Rozdil mezi nejvetsim a nejmensim zadanym cislem
     let nejvetsiCislo : number = cislo1;                                  
     let nejmensiCislo : number = cislo2;
-if (cislo1 < cislo2||cislo1 < cislo3){
+if (cislo1 < cislo2&&cislo1 < cislo3){
     nejmensiCislo = cislo1
 }
-if (cislo2 < cislo1|| cislo2 < cislo3){
+if (cislo2 < cislo1&& cislo2 < cislo3){
     nejmensiCislo = cislo2
 }
-if (cislo3 < cislo1||cislo3<cislo2){
+if (cislo3 < cislo1&&cislo3<cislo2){
     nejmensiCislo = cislo3
 }
-if (cislo1 > cislo2||cislo1 > cislo3){
-    nejmensiCislo = cislo1
+if (cislo1 > cislo2&&cislo1 > cislo3){
+    nejvetsiCislo = cislo1
 }
-if (cislo2 > cislo1|| cislo2 > cislo3){
-    nejmensiCislo = cislo2
+if (cislo2 > cislo1&& cislo2 > cislo3){
+    nejvetsiCislo = cislo2
 }
-if (cislo3 > cislo1||cislo3>cislo2){
-    nejmensiCislo = cislo3
+if (cislo3 > cislo1&&cislo3>cislo2){
+    nejvetsiCislo = cislo3
 }
 
 let rozdil : number = nejvetsiCislo - nejmensiCislo;
 console.log("Rozdil mezi nejvetsim a nejmensim cisel je: "+rozdil);
 // 5. Pro kazde zadane cislo vetsi nez 100 vypise program hvezdicku.
 let pocitani : string = "";
-if (cislo1 >= 100){
+if (cislo1 > 100){
     pocitani = pocitani + "*";
 }
-if (cislo2 >= 100){
+if (cislo2 > 100){
     pocitani = pocitani + "*";
 }
-if (cislo3 >= 100){
+if (cislo3 > 100){
     pocitani = pocitani + "*";
 }
 console.log("Kazda hvezdicka znamena ze je tam cislo vetsi nez 100: "+pocitani);
@@ -75,7 +75,7 @@ console.log("Kazda hvezdicka znamena ze je tam cislo vetsi nez 100: "+pocitani);
 // ULOHA O2:
 // Napiste program, ktery
 // - se zepta uzivatele na 3 texty; kazdy text uzivatel potvrdi odeslanim ENTER
-function text02(){
+function textO2(){
 let textUzivatele1 : string = prompt("Zadejte text: ");
 let textUzivatele2 : string = prompt("Zadejte text: ");
 let textUzivatele3 : string = prompt("Zadejte text: ");
@@ -163,8 +163,37 @@ console.log("Nejdelsi text je: " + nejdelsiText);
 
 // Program potom uzavrete do funkce "textyO2"
 }
-text02();
+//text02();
+function cislaO3() {
 // ULOHA O3:
+let nejvetsiO3 : number = 0;
+let nejmensiO3 : number = Number.MAX_VALUE;
+let soucinO3 : number = 1;
+let soucetO3 : number = 0;
+let aritmetickyPrumerO3 : number = 0;
+let pocetCykluO3 : number = 0;
+for ( ; ; ){
+    let cislaO3 : string = prompt('Zadej cisla: ');
+    let cisloO3 : number = Number(cislaO3);
+    if (cisloO3 <= 0){
+        break;
+    }
+    if (nejmensiO3 > cisloO3){
+        nejmensiO3 = cisloO3;
+    }
+    if (nejvetsiO3 < cisloO3){
+        nejvetsiO3 = cisloO3;
+    }
+    soucetO3 = soucetO3 + cisloO3;
+    soucinO3 = soucinO3 * cisloO3;
+    pocetCykluO3++;
+}
+aritmetickyPrumerO3 = soucetO3 / pocetCykluO3;
+console.log('Nejvetsi cislo z tech ktere jste zadal je: ' + nejvetsiO3);
+console.log('Nejmensi cislo z tech ktere jste zadal je: ' + nejmensiO3);
+console.log('Soucin vsech cisel je: ' + soucinO3);
+console.log('Soucet vsech cisel je: ' + soucetO3);
+console.log('Aritmeticky prumer vsech cisel je: ' + aritmetickyPrumerO3);
 // Zadani je totozne, jako u ulohy O1, ALE
 // - program se nepta na 3 cisla, ale nechava uzivatele zapisovat cisla, kazde potvrdi ENTERem
 // - zadavani cisel se ukonci zadanim cisla 0, nebo zaporneho cisla
@@ -172,7 +201,9 @@ text02();
 // - PO zadani vsech cisel (tzn. po zadani 0 nebo zaporneho cisla) program vypocita a vypise vsechny udaje O1-1 .. O1-5.
 // Pro reseni teto ulohy NEPOUZIVEJTE pole.
 // Program potom uzavrete do funkce "cislaO3"
-
+}
+//cislaO3()
+function cislaO4(){
 // ULOHA O4:
 // Zadani je totozne, jako u ulohy O2, ALE
 // - program se nepta na 3 texty, ale nechava uzivatele zapisovat texty, kazdy potvrdi ENTERem
@@ -180,6 +211,7 @@ text02();
 // PO zadani vsech textu program vypocita a vypise vsechny udaje O2-1 .. O2-5
 // Pro reseni teto ulohy NEPOUZIVEJTE pole.
 // Program potom uzavrete do funkce "cislaO4"
+}
 
 // ULOHA O5 - bonusova:
 // V predchozich ulohach se MOHLY vyskytnout opakujici se kusy kodu. Pokuste se tato opakovani nahradit funkcemi, a v puvodnich
